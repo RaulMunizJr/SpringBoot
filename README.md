@@ -30,7 +30,7 @@ class VehicleRepository {
 ```
 - Service
 The business logic of an application usually resides within the service layer – so we'll use the @Service annotation to indicate that a class belongs to that layer:
-`
+```
 @Service
 public class VehicleService {
     // ...    
