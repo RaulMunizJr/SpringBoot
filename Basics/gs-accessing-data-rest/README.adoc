@@ -1,0 +1,13 @@
+# Accessing JPA Data with REST
+REFERENCE: https://spring.io/guides/gs/accessing-data-rest/ & https://spring.io/projects/spring-data-jpa
+
+- Domain 'Object'
+Similar to Bean folder, but this repository is essentially an interface and will allow you to perform various operations involving Person objects. It gets these operations by extending the PagingAndSortingRepository interface defined in Spring Data Commons.
+
+> src/main/java/com/example/accessingdatarest/Person.java
+
+- 'Object' Repository
+At runtime, Spring Data REST automatically creates an implementation of the PagingAndSortingRepository interface. Then it uses the @RepositoryRestResource annotation to direct Spring MVC to create RESTful endpoints at <path>
+Note: @RepositoryRestResource is not required for a repository to be exported. It is used only to change the export details, such as using /people instead of the default value of /persons.
+
+- Spring Boot automatically spins up Spring Data JPA to create a concrete implementation of the ObjectRepository and configure it to talk to a back end in-memory database by using JPA.

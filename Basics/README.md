@@ -13,3 +13,6 @@ Creates a simple web application
 
 ## gs-rest-hateoas: Building a Hypermedia-Driven RESTful Web Service
 Creates a hypermedia-driven RESTful web service with Spring HATEOAS
+
+## gs-accessing-data-rest
+Application with a hypermedia-based RESTful front end and a JPA-based back end. Front-end is based on terminal commands.
