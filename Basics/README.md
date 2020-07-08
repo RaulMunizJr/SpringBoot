@@ -10,3 +10,6 @@ Creates a “Hello, World” RESTful web service with Spring.
 ```
 ## gs-spring-boot: Building an Application with Spring Boot
 Creates a simple web application
+
+## gs-rest-hateoas: Building a Hypermedia-Driven RESTful Web Service
+Creates a hypermedia-driven RESTful web service with Spring HATEOAS
