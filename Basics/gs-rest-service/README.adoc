@@ -6,6 +6,7 @@ Provide a plain old Java object with fields, constructors, and accessors for the
 
 - Controller
 HTTP requests are handled by a controller. These components are identified by the @RestController annotation
+
 > src/main/java/com/example/restservice/GreetingController.java
 ```
 - The @GetMapping annotation ensures that HTTP GET requests to /greeting are mapped to the greeting() method.
