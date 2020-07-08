@@ -1,0 +1,24 @@
+# Building a Hypermedia-Driven RESTful Web Service
+REFERENCE: https://spring.io/guides/gs/rest-hateoas/
+- RepresentationModel
+Adds the field and accessor for the content as well as a constructor
+
+> src/main/java/com/example/resthateoas/Greeting.java
+```
+@JsonCreator: Signals how Jackson can create an instance of this POJO.
+@JsonProperty: Marks the field into which Jackson should put this constructor argument.
+```
+
+- Controller
+HTTP requests are handled by a controller. These components are identified by the @RestController annotation, which combines the @Controller and @ResponseBody annotations.
+
+- @RequestMapping: annotation ensures that HTTP requests to /greeting are mapped to the greeting() method.
+@RequestParam binds the value of the query string parameter name into the name parameter of the greeting() method.
+
+- Both linkTo(…) and methodOn(…) are static methods on ControllerLinkBuilder that let you fake a method invocation on the controller.
+The returned LinkBuilder will have inspected the controller method’s mapping annotation to build up exactly the URI to which the method is mapped.
+
+- @RestController
+Because the @RestController annotation is present on the class, an implicit @ResponseBody annotation is added to the greeting method. This causes Spring MVC to render the returned HttpEntity and its payload (the Greeting) directly to the response.
+
+- The call to withSelfRel() creates a Link instance that you add to the Greeting representation model.
