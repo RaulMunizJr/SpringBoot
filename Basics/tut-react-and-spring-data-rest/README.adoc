@@ -1,0 +1,54 @@
+# React.js and Spring Data REST
+REFERENCE: https://spring.io/guides/tutorials/react-and-spring-data-rest/ & https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
+
+- Domain 'Object'
+Domain objects form the cornerstone of any Spring Data REST-based application
+```
+(1) @Entity is a JPA annotation that denotes the whole class for storage in a relational table.
+(2) @Id and @GeneratedValue are JPA annotations to note the primary key and that is generated automatically when needed.
+```
+
+> src/main/java/com/practice/react/Employee.java
+
+- Repository 
+```
+(1) The repository extends Spring Data Commons' CrudRepository and plugs in the type of the domain object and its primary key
+```
+
+> src/main/java/com/practice/react/EmployeeRepository.java
+
+- Loaders
+To work with this application, we need to pre-load it with some data
+```
+(1) - @Component - This class is marked with Spring’s @Component annotation so that it is automatically picked up by @SpringBootApplication
+(2) - CommandLineRunner - It implements Spring Boot’s CommandLineRunner so that it gets run after all the beans are created and registered
+(3) - @Autowired - It uses constructor injection and autowiring to get Spring Data’s automatically created EmployeeRepository
+(4) - The run() method is invoked with command line arguments, loading up your data
+
+One of the biggest, most powerful features of Spring Data is its ability to write JPA queries for you.
+Spring Data looks at the name of methods in a repository class and figures out the operations you need, including saving, deleting, and finding.
+```
+
+> src/main/java/com/practice/react/DatabaseLoader.java
+
+- Controller
+Setting up 'C' in MVC
+```
+(1) - @Controller - marks this class as a Spring MVC controller.
+(2) - @RequestMapping - flags the index() method to support the / route.
+(3) - It returns index as the name of the template, which Spring Boot’s autoconfigured view resolver will map to src/main/resources/templates/index.html
+```
+
+> rc/main/java/com/practice/react/HomeController.java
+
+- HTML template 
+Thymeleaf
+
+- App Component
+```
+React.Component{…​} - is the method that creates a React component.
+componentDidMount - is the API invoked after React renders a component in the DOM.
+render - is the API that “draws” the component on the screen.
+```
+
+> src/main/js/app.js
